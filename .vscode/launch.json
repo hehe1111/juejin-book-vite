@@ -1,0 +1,21 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    // ! 调试 11 小节
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "chap11: build inspect",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      // 先限定调式所在目录，这样被调试文件通过相对路径引用其他文件时，才能正确解析，否则会报错
+      "cwd": "${workspaceFolder}/10~11.rollup-basic/src/build-inspect",
+      // 要调试的文件。限定 cwd 后，program 的值可以相对 cwd 来写
+      "program": "./build.js",
+    }
+  ]
+}
