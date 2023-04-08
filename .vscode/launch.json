@@ -8,14 +8,26 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "chap11: build inspect",
+      "name": "chap11: 01 build inspect",
       "skipFiles": [
         "<node_internals>/**"
       ],
       // 先限定调式所在目录，这样被调试文件通过相对路径引用其他文件时，才能正确解析，否则会报错
-      "cwd": "${workspaceFolder}/10~11.rollup-basic/src/build-inspect",
+      "cwd": "${workspaceFolder}/10~11.rollup-basic/src/01-build-inspect",
       // 要调试的文件。限定 cwd 后，program 的值可以相对 cwd 来写
       "program": "./build.js",
-    }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "chap11: 02 build generate",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      // 先限定调式所在目录，这样被调试文件通过相对路径引用其他文件时，才能正确解析，否则会报错
+      "cwd": "${workspaceFolder}/10~11.rollup-basic/src/02-build-generate",
+      // 要调试的文件。限定 cwd 后，program 的值可以相对 cwd 来写
+      "program": "./build.js",
+    },
   ]
 }
