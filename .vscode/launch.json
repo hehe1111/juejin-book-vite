@@ -47,5 +47,24 @@
       "cwd": "${workspaceFolder}/10~11.rollup-basic/src/04-build-hooks-order",
       "program": "./build.js",
     },
+    // ! 调试 12 小节
+    {
+      "name": "chap12: Launch via PNPM",
+      "request": "launch",
+      // 相当于 pnpm run dev。run-script 是必要的
+      "runtimeArgs": [
+        "run-script",
+        "dev"
+      ],
+      // pnpm | npm | yarn。会自动在查找该命令。实际上运行如：/usr/local/bin/pnpm run-script dev
+      "runtimeExecutable": "pnpm",
+      "skipFiles": [
+        "<node_internals>/**",
+        // "**/node_modules/**",
+      ],
+      "type": "node",
+      // 限定 pnpm run dev 在该目录下执行
+      "cwd": "${workspaceFolder}/12-vite-plugin-development",
+    },
   ]
 }

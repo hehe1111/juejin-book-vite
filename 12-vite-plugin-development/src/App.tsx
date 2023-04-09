@@ -1,53 +1,19 @@
-// import { useState } from 'react'
-// import Logo from './logo.svg'
-// import './App.css'
-
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <Logo></Logo>
-//         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-//         <p>Hello Vite + React!</p>
-//         <p>
-//           <button type="button" onClick={() => setCount((count) => count + 1)}>
-//             count is: {count}
-//           </button>
-//         </p>
-//         <p>
-//           Edit <code>App.tsx</code> and save to test HMR updates.
-//         </p>
-//         <p>
-//           <a
-//             className="App-link"
-//             href="https://reactjs.org"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Learn React
-//           </a>
-//           {' | '}
-//           <a
-//             className="App-link"
-//             href="https://vitejs.dev/guide/features.html"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Vite Docs
-//           </a>
-//         </p>
-//       </header>
-//     </div>
-//   )
-// }
 import Logo from "./logo.svg";
 
 function App() {
   return (
     <>
-      <img src={Logo} />
+      {/* 切换以下注释需要同时变更 vite.config.ts 里的配置 */}
+
+      {/* 右键检查元素，可以发现渲染结果是不同的 */}
+
+      {/* 这一行不要解开注释：使用 svgr({ defaultExport: "url" }) */}
+      {/* <div>渲染结果是 img</div>
+      <img src={Logo} /> */}
+
+      {/* 这一行不要解开注释：使用 svgr() 实际上是使用 svgr({ defaultExport: "component" }) */}
+      <div>渲染结果是 svg</div>
+      <Logo />
     </>
   );
 }
